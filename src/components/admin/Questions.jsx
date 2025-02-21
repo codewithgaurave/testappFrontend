@@ -25,7 +25,7 @@ const Questions = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get('http://localhost:5000/api/subjects', {
+      const { data } = await axios.get('https://testappbackend-p8dc.onrender.com/api/subjects', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSubjects(data);
@@ -43,7 +43,7 @@ const Questions = () => {
     setIsLoading(true);
     try {
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get(`http://localhost:5000/api/questions/subject/${subjectId}`, {
+      const { data } = await axios.get(`https://testappbackend-p8dc.onrender.com/api/questions/subject/${subjectId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setQuestions(data);
@@ -96,7 +96,7 @@ const Questions = () => {
     setIsSubmitting(true);
     try {
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      await axios.post('http://localhost:5000/api/questions', formData, {
+      await axios.post('https://testappbackend-p8dc.onrender.com/api/questions', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('Question created successfully');

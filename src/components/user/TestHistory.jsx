@@ -13,7 +13,7 @@ const TestHistory = () => {
     setLoading(true);
     try {
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get('http://localhost:5000/api/tests/user', {
+      const { data } = await axios.get('https://testappbackend-p8dc.onrender.com/api/tests/user', {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Sort tests by date (newest first)

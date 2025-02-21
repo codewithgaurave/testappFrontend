@@ -15,7 +15,7 @@ const Categories = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get('http://localhost:5000/api/categories', {
+      const { data } = await axios.get('https://testappbackend-p8dc.onrender.com/api/categories', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCategories(data);
@@ -35,7 +35,7 @@ const Categories = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      await axios.post('http://localhost:5000/api/categories', formData, {
+      await axios.post('https://testappbackend-p8dc.onrender.com/api/categories', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('Category created successfully');

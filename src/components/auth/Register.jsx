@@ -47,7 +47,7 @@ const Register = () => {
     setLoading(true);
     
     try {
-      const { data } = await axios.post('http://localhost:5000/api/users', {
+      const { data } = await axios.post('https://testappbackend-p8dc.onrender.com/api/users', {
         name: formData.name,
         email: formData.email,
         password: formData.password

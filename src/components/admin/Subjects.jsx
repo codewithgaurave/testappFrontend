@@ -18,7 +18,7 @@ const Subjects = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get('http://localhost:5000/api/categories', {
+      const { data } = await axios.get('https://testappbackend-p8dc.onrender.com/api/categories', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCategories(data);
@@ -34,7 +34,7 @@ const Subjects = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get(`http://localhost:5000/api/subjects/category/${categoryId}`, {
+      const { data } = await axios.get(`https://testappbackend-p8dc.onrender.com/api/subjects/category/${categoryId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubjects(data);
@@ -67,7 +67,7 @@ const Subjects = () => {
     try {
       setIsSubmitting(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      await axios.post('http://localhost:5000/api/subjects', 
+      await axios.post('https://testappbackend-p8dc.onrender.com/api/subjects', 
         { ...formData, category: selectedCategory },
         { headers: { Authorization: `Bearer ${token}` }}
       );

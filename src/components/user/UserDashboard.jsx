@@ -19,7 +19,7 @@ const UserDashboard = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get('http://localhost:5000/api/categories', {
+      const { data } = await axios.get('https://testappbackend-p8dc.onrender.com/api/categories', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCategories(data);
@@ -34,7 +34,7 @@ const UserDashboard = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get(`http://localhost:5000/api/subjects/category/${categoryId}`, {
+      const { data } = await axios.get(`https://testappbackend-p8dc.onrender.com/api/subjects/category/${categoryId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubjects(data);
@@ -49,13 +49,13 @@ const UserDashboard = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get(`http://localhost:5000/api/questions/subject/${subjectId}`, {
+      const { data } = await axios.get(`https://testappbackend-p8dc.onrender.com/api/questions/subject/${subjectId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQuestions(data);
       
       const testResponse = await axios.post(
-        'http://localhost:5000/api/tests',
+        'https://testappbackend-p8dc.onrender.com/api/tests',
         { subject: subjectId },
         { headers: { Authorization: `Bearer ${token}` }}
       );
@@ -98,7 +98,7 @@ const UserDashboard = () => {
       }));
 
       await axios.put(
-        `http://localhost:5000/api/tests/${testId}`,
+        `https://testappbackend-p8dc.onrender.com/api/tests/${testId}`,
         { answers: formattedAnswers },
         { headers: { Authorization: `Bearer ${token}` }}
       );

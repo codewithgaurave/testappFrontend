@@ -48,16 +48,16 @@
       
 //       const token = JSON.parse(userInfo).token;
 //       const [categories, subjects, questions, tests] = await Promise.all([
-//         axios.get('http://localhost:5000/api/categories', {
+//         axios.get('https://testappbackend-p8dc.onrender.com/api/categories', {
 //           headers: { Authorization: `Bearer ${token}` }
 //         }),
-//         axios.get('http://localhost:5000/api/subjects', {
+//         axios.get('https://testappbackend-p8dc.onrender.com/api/subjects', {
 //           headers: { Authorization: `Bearer ${token}` }
 //         }),
-//         axios.get('http://localhost:5000/api/questions', {
+//         axios.get('https://testappbackend-p8dc.onrender.com/api/questions', {
 //           headers: { Authorization: `Bearer ${token}` }
 //         }),
-//         axios.get('http://localhost:5000/api/tests', {
+//         axios.get('https://testappbackend-p8dc.onrender.com/api/tests', {
 //           headers: { Authorization: `Bearer ${token}` }
 //         }),
 //       ]);
@@ -82,7 +82,7 @@
 //       }
       
 //       const token = JSON.parse(userInfo).token;
-//       const response = await axios.get('http://localhost:5000/api/admin-stats/detailed', {
+//       const response = await axios.get('https://testappbackend-p8dc.onrender.com/api/admin-stats/detailed', {
 //         headers: { Authorization: `Bearer ${token}` }
 //       });
 //       setDetailedStats(response.data);
@@ -103,7 +103,7 @@
 //       }
       
 //       const token = JSON.parse(userInfo).token;
-//       const response = await axios.get(`http://localhost:5000/api/admin-stats/user/${userId}`, {
+//       const response = await axios.get(`https://testappbackend-p8dc.onrender.com/api/admin-stats/user/${userId}`, {
 //         headers: { Authorization: `Bearer ${token}` }
 //       });
       
@@ -581,16 +581,16 @@ const AdminDashboard = () => {
     try {
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
       const [categories, subjects, questions, tests] = await Promise.all([
-        axios.get('http://localhost:5000/api/categories', {
+        axios.get('https://testappbackend-p8dc.onrender.com/api/categories', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/subjects', {
+        axios.get('https://testappbackend-p8dc.onrender.com/api/subjects', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/questions', {
+        axios.get('https://testappbackend-p8dc.onrender.com/api/questions', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/tests', {
+        axios.get('https://testappbackend-p8dc.onrender.com/api/tests', {
           headers: { Authorization: `Bearer ${token}` }
         }),
       ]);
@@ -609,7 +609,7 @@ const AdminDashboard = () => {
   const fetchDetailedStats = async () => {
     try {
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const response = await axios.get('http://localhost:5000/api/admin-stats/detailed', {
+      const response = await axios.get('https://testappbackend-p8dc.onrender.com/api/admin-stats/detailed', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setDetailedStats(response.data);
@@ -621,7 +621,7 @@ const AdminDashboard = () => {
   const fetchUserTestStats = async (userId) => {
     try {
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const response = await axios.get(`http://localhost:5000/api/admin-stats/user/${userId}`, {
+      const response = await axios.get(`https://testappbackend-p8dc.onrender.com/api/admin-stats/user/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSelectedUserStats(response.data);

@@ -18,7 +18,7 @@ const TakeTest = () => {
     try {
       setIsLoading(true);
       const token = JSON.parse(localStorage.getItem('userInfo')).token;
-      const { data } = await axios.get('http://localhost:5000/api/categories', {
+      const { data } = await axios.get('https://testappbackend-p8dc.onrender.com/api/categories', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCategories(data);
